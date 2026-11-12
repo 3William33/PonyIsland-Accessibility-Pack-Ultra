@@ -4,9 +4,9 @@
 -optimize+
 -platform:x86
 -out:build\PonyIslandAccessibility.dll
--r:"D:\steam\steamapps\common\Pony Island\PonyIsland_Data\Managed\mscorlib.dll"
--r:"D:\steam\steamapps\common\Pony Island\PonyIsland_Data\Managed\System.dll"
--r:"D:\steam\steamapps\common\Pony Island\PonyIsland_Data\Managed\System.Core.dll"
+-r:mscorlib.dll
+-r:System.dll
+-r:System.Core.dll
 -r:UnityEngine.dll
 -r:UnityEngine.CoreModule.dll
 -r:UnityEngine.IMGUIModule.dll

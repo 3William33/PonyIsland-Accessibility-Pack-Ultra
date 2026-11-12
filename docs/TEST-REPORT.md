@@ -3,7 +3,7 @@
 > **读这份报告前先知道的三件事**
 >
 > 1. **文中路径分三类**，不要混：
->    - **实测环境**：下面"环境"一行的 `D:\steam\...` 是 2026-11-07 那台测试机上 Steam 库的真实位置，只是记录，不是你机器上应该出现的路径；
+>    - **实测环境**：报告中的游戏安装目录已泛化处理，不包含测试机的本地绝对路径；
 >    - **历史工作目录**：`dist\...`、`backup\...` 是当时原始工作目录里的位置，**发布包里已经没有这两个目录**（脚本现在就在包根目录，备份文件不随包分发）；
 >    - **示例路径**：README 里出现的 `X:\SteamLibrary\steamapps\common\Pony Island` 之类只是格式演示。
 > 2. **本报告的实机结论只覆盖插件 DLL**（SHA-256 `919c8ac2…`，至今未重新编译）。
@@ -13,7 +13,7 @@
 环境：Windows 10.0.26200 / Steam 版 Pony Island / Unity 2017.4.40f1 (x86) / BepInEx 5.4.23.3 (x86) / HarmonyX
 插件：`PonyIslandAccessibility.dll` v1.0.0
 SHA-256：`919c8ac2efb3ecd7d79499396d7191d1ab7ccc41d93951af521557a8694def5e`
-安装位置（测试机）：`D:\steam\steamapps\common\Pony Island\BepInEx\plugins\PonyIslandAccessibility\`
+安装位置（测试机）：`<SteamLibrary>\steamapps\common\Pony Island\BepInEx\plugins\PonyIslandAccessibility\`
 配置：`BepInEx\config\local.ponyisland.accessibility.cfg`（`Enabled = true`，`AssistHopelessSoul = true`）
 
 ## 结论
@@ -84,12 +84,12 @@ THANKS FOR PLAYING.
 
 改动内容：
 
-- `install.bat` / `uninstall.bat` / `patch-on.bat` / `patch-off.bat`：删掉硬编码的 `D:\steam\...`，改为共用 `scripts\find-game.bat` 的 5 级自动定位（参数 → `game-path.txt` → `PONYPATH` → 注册表/VDF/常见安装位置 → 手动输入），并加上"游戏进程在运行就拒绝执行"的前置检查、`payload\` 完整性检查、卸载前的确认与标记文件校验、确定的退出码。
+- `install.bat` / `uninstall.bat` / `patch-on.bat` / `patch-off.bat`：使用共用 `scripts\find-game.bat` 的 5 级自动定位（参数 → `game-path.txt` → `PONYPATH` → 注册表/VDF/常见安装位置 → 手动输入），并加上"游戏进程在运行就拒绝执行"的前置检查、`payload\` 完整性检查、卸载前的确认与标记文件校验、确定的退出码。
 - `src\build.rsp`：移除原来写死的个人绝对路径，改为不含任何本机路径、也不含注释（C# 编译器不接受 rsp 里的 `//`）的可移植参数。
 - `src\build.bat`（新增）：自动定位 `csc.exe`、游戏目录、`PonyIsland_Data\Managed` 的 9 个引用程序集与 `payload\BepInEx\core` 的 2 个加载器程序集；缺依赖就先报错、不启动编译；只读游戏目录，加 `/copy` 才写进 `payload\`。
 - `verify.bat`（新增）：逐项校验 `SHA256SUMS.txt`。
 - 文档：区分示例路径 / 自动定位（默认）/ 实测环境三类写法；本段即为此补充。
-- 隐私扫描：包内文本已不含个人用户名与个人目录；唯一残留的机器相关信息就是上文标注为"测试机"的 `D:\steam` 与历史 `backup\` 文件名（哈希前缀，非账号信息）。
+- 隐私扫描：包内文本不含个人用户名、个人目录、凭据或密钥；测试机路径已泛化处理。
 
 验证方式与边界（如实）：
 
