@@ -4,8 +4,8 @@ rem ===========================================================================
 rem  Removes ONLY this v2 plugin and its own state.
 rem  BepInEx core, other plugins, game files, saves and registry progress stay.
 rem ===========================================================================
-set "GAME=%~1"
-if "%GAME%"=="" set "GAME=D:\steam\steamapps\common\Pony Island"
+call "%~dp0scripts\find-game.bat" "%~1"
+if errorlevel 1 exit /b 1
 if not exist "%GAME%\.pony_accessibility_v2" if not exist "%GAME%\.pony_accessibility_patch" (
   echo ERROR: v2 marker not found. Nothing was removed.
   exit /b 1
