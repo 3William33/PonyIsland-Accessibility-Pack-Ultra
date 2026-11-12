@@ -1,4 +1,4 @@
-# [PonyIsland-Accessibility-Pack](https://github.com/3William33/PonyIsland-Accessibility-Pack)-Ultra
+# [PonyIsland-Accessibility-Pack-Ultra
 
 **《Pony Island》（小马岛）全游戏生存辅助 Mod**
 
