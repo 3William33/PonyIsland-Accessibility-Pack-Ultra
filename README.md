@@ -1,5 +1,7 @@
 # PonyIsland-Accessibility-Pack-Ultra
 
+**简体中文** | [English](README_EN.md)
+
 **《Pony Island》（小马岛）全游戏生存辅助 Mod**
 
 一个给《小马岛》做的简单修改器，主要解决跳跃障碍、敌人攻击和部分战斗机制带来的反复死亡问题。
