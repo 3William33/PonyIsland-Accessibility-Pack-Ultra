@@ -14,7 +14,7 @@ Some sections make you dodge the same obstacles over and over. I just wanted to 
 
 So I made this mod.
 
-It began as a small patch for one particular level, then grew into a game-wide survival assist.
+I originally made it for the **Act III ticket challenge where you have to reach the end without harming Jesus**. Dodging everything while trying not to hit him was driving me crazy. It eventually grew into a game-wide survival assist.
 
 The goal is simple: **I want to enjoy the game without getting stuck on the same action sequence forever.**
 
@@ -22,8 +22,8 @@ The goal is simple: **I want to enjoy the game without getting stuck on the same
 
 | Key | Feature | Default |
 |---|---|---|
-| **F8** | Game-wide survival assist | OFF |
-| **F9** | Final boss assist | OFF |
+| **F8** | Game-wide survival assist (especially for the Jesus ticket challenge) | OFF |
+| **F9** | Hidden encounter assist (after all 24 tickets) | OFF |
 
 ### F8 — Game-Wide Survival Assist
 
@@ -31,15 +31,17 @@ When enabled, the mod attempts to prevent ordinary hazard collisions, enemy atta
 
 You can still move, jump, shoot, collect items, and solve puzzles yourself. It doesn't autoplay levels or skip them for you.
 
-It isn't limited to a particular butterfly, gate, or chapter anymore.
+**Why I made F8:** In Act III, one ticket requires you to reach the end of the Jesus level **without harming Jesus**. F8 can help you survive the hazards along the way, but **it does not complete the ticket requirement for you**. You still have to play the level and avoid hitting him yourself.
+
+F8 isn't limited to a particular butterfly, gate, or chapter anymore.
 
 **Important: Some story sequences require you to die or fail normally. If you run into one, turn off F8 yourself, complete the sequence, and turn it back on afterward.**
 
-### F9 — Final Boss Assist
+### F9 — Hidden Encounter Assist (Minor Unlock Hint)
 
-A separate assist for the final boss encounter.
+Collecting **all 24 tickets** unlocks an optional hidden boss encounter. F9 provides assistance specifically for that fight; **it is not an assist for the regular story's final boss**. I won't spoil the opponent's identity or what happens in that encounter.
 
-It helps with collision handling, aiming, and attacking, while the boss still loses health through the game's own damage mechanics.
+It helps with collision handling, aiming, and attacking, while the opponent still loses health through the game's own damage mechanics.
 
 F8 and F9 can be toggled independently.
 
