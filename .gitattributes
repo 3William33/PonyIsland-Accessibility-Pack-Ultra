@@ -1,0 +1,10 @@
+# Byte-for-byte integrity is part of this pack: SHA256SUMS.txt and verify.bat
+# compare hashes, so git must never touch line endings or convert anything.
+# With -text there is no eol conversion at all, which keeps a fresh clone
+# identical to the archive (verified by running verify.bat after cloning).
+* -text
+
+*.dll   binary
+*.exe   binary
+*.pdb   binary
+*.zip   binary

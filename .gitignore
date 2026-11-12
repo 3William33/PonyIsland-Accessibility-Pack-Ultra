@@ -1,0 +1,16 @@
+# Per-machine state, written by install.bat after a successful install.
+# It holds a path from your own disk, so it is never committed and never
+# listed in SHA256SUMS.txt.
+game-path.txt
+
+# Compiler output of src/build.bat. payload/ keeps the tested DLL instead.
+src/build/
+
+# Rebuilt archives belong next to the folder, not inside the repository.
+*.zip
+*.zip.old
+
+# Windows and editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
