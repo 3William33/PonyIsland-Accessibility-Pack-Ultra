@@ -93,7 +93,7 @@ pushd "%SRC%"
 if not exist build mkdir build
 echo.
 echo Compiling AccessibilityPlugin.cs ...
-"%CSC%" -lib:"%MANAGED%" @build.rsp
+"%CSC%" -noconfig -lib:"%MANAGED%" @build.rsp
 set "RC=%errorlevel%"
 popd
 if not "%RC%"=="0" (
