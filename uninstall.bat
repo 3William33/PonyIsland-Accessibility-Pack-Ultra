@@ -13,7 +13,9 @@ if not exist "%GAME%\.pony_accessibility_v2" if not exist "%GAME%\.pony_accessib
 tasklist /fi "imagename eq PonyIsland.exe" 2>nul | findstr /i /c:"PonyIsland.exe" >nul && exit /b 1
 echo Removing only Pony Island Global Survival Assist v2 ...
 del /q "%GAME%\BepInEx\plugins\PonyIslandGlobalSurvivalV2\PonyIslandGlobalSurvivalV2.dll" 2>nul
+del /q "%GAME%\BepInEx\plugins\PonyIslandAccessibility\PonyIslandAccessibility.dll" 2>nul
 rmdir "%GAME%\BepInEx\plugins\PonyIslandGlobalSurvivalV2" 2>nul
+rmdir "%GAME%\BepInEx\plugins\PonyIslandAccessibility" 2>nul
 del /q "%GAME%\BepInEx\config\local.ponyisland.accessibility.v2.cfg" 2>nul
 if exist "%GAME%\.pony_accessibility_v2_rollback\PonyIslandAccessibility.dll" (
   mkdir "%GAME%\BepInEx\plugins\PonyIslandAccessibility" >nul 2>nul

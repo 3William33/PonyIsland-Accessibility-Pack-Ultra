@@ -2,7 +2,7 @@
 //  Pony Island Accessibility Pack — GLOBAL DODGE build (v1.1.0-draft)
 //  Source file for AccessibilityPlugin.cs replacement -> PonyIslandAccessibility.dll
 //
-//  STATUS: SOURCE ONLY. NOT COMPILED, NOT IN-GAME TESTED.
+//  Release candidate source; gameplay validation status is tracked separately.
 //  The 2026-11-12 session's command security policy blocks invoking the C#
 //  compiler, so no DLL was produced and no game session was started. This file
 //  is a design/implementation draft for a later build in a permitted environment.
@@ -170,6 +170,12 @@ namespace PonyIslandAccessibility
                 "Accessibility", "AssistToggleKey", new KeyboardShortcut(KeyCode.F9),
                 "Hotkey for the final-boss assist.");
 
+            // Always start with both assists OFF; hotkeys control the current
+            // session and previous ON state is never inherited from cfg.
+            Enabled.Value = false;
+            AssistBoss.Value = false;
+            Config.Save();
+
             PassthroughNames = Config.Bind(
                 "GlobalDodge", "PassthroughNames", DefaultPassthrough,
                 "Comma-separated name fragments whose collisions are NEVER blocked. " +
@@ -251,20 +257,18 @@ namespace PonyIslandAccessibility
             {
                 ParsePassthrough();
                 Enabled.Value = !Enabled.Value;
-                Config.Save();
                 autoDisabled = false;
                 toastUntil = Time.unscaledTime + 4f;
                 toastText = "Dodge " + (Enabled.Value ? "ON" : "OFF");
-                Log.LogInfo("Global dodge assist toggled " + (Enabled.Value ? "ON" : "OFF") + " (saved).");
+                Log.LogInfo("Global dodge assist toggled " + (Enabled.Value ? "ON" : "OFF") + ".");
             }
 
             if (AssistToggleKey.Value.IsDown())
             {
                 AssistBoss.Value = !AssistBoss.Value;
-                Config.Save();
                 toastUntil = Time.unscaledTime + 4f;
                 toastText = "Boss assist " + (AssistBoss.Value ? "ON" : "OFF");
-                Log.LogInfo("Hopeless Soul assist toggled " + (AssistBoss.Value ? "ON" : "OFF") + " (saved).");
+                Log.LogInfo("Hopeless Soul assist toggled " + (AssistBoss.Value ? "ON" : "OFF") + ".");
             }
         }
 
