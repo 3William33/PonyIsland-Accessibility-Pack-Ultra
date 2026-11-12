@@ -3,7 +3,7 @@
 # verify with verify.bat (or: sha256sum -c SHA256SUMS.txt)
 # not listed on purpose: game-path.txt and src/build/ are local state,
 # and .gitignore / .gitattributes / .git are repository metadata only
-4c07a15f62b4db8f34e772304c183fd637a074f16e16121bcbd4370bec38abe9 *README.md
+785200e96e77ff6f9940de957ef545dd9392f4a214c78a5ae807617e5e970bbe *README.md
 db95e343d8a316948d985d2e41511476fb8a759c7959b20492e50f8342750808 *THIRD-PARTY-NOTICES.md
 610e342f507ed82565aeb6e782f0d3d5945c4565a37c848e81251b9d67b8d3a6 *docs/TEST-REPORT.md
 34c04b62d0fba34a9d7be4b3717bdbd1c807537227d1927d7377a038c9ca3c09 *install.bat
